@@ -11,7 +11,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1 className='text-green-400'>Welcome to VChat</h1>
+        <h1 className='text-green-400'>Welcome to VChat
+        </h1>
       </main>
     </>
   )
