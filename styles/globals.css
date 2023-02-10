@@ -11,5 +11,69 @@
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+    /* color: #f7f8fa; */
+  }
+}
+
+@layer components {
+  .container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  /* header modal animation */
+  .modalH {
+    z-index: 1;
+    display: flex;
+    position: relative;
+    animation: animated 0.7s;
+  }
+  @keyframes animated {
+    from {
+      /* transform: scale(0.5); */
+      translate: 0px -240px;
+    }
+    to {
+      /* transform: scale(1); */
+      translate: 0px 0px;
+
+    }
+  }
+  .modal {
+    z-index: 1;
+    display: flex;
+    position: relative;
+    animation: animate 0.7s;
+  }
+  @keyframes animate {
+    from {
+      /* transform: scale(0.5); */
+      translate: 0px 120px;
+    }
+    to {
+      /* transform: scale(1); */
+      translate: 0px 0px;
+
+    }
+  }
+  .header {
+    @apply text-gray-800 dark:text-gray-200 font-semibold text-lg
+  }
+}
+
+@layer base {
+  ::-webkit-scrollbar {
+    width: 0px;
+  scrollbar-width: thin;
+    height: 20px;
+    background-color: gray;
   }
 }
