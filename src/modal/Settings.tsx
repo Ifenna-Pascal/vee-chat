@@ -8,7 +8,7 @@ const SettingsModal = () => {
   const {type} = useAppSelector(state => state.modal);
     useEffect(()=> {
         type === "profile" && setNumbering('4') 
-    }, [])
+    }, [type])
     const [numbering, setNumbering] = useState<string>('1');
     return (
         <div className="modal rounded-md flex ml-[62px] shadow-lg w-[400px] h-[430px]">

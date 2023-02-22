@@ -17,16 +17,19 @@ function ChatHeader({img, name, message}: Props) {
     dispatch(toggle(type));
   }
   return (
-    <div className='w-full h-[15vh] shadow-sm cursor-pointer px-6 flex items-center' onClick={()=>Toggle("profiles")}>
-        <img src={img} alt="profile" className='w-[50px] h-[50px] rounded-[50%] object-fit' />
+    <div>
+      <div className='w-full h-[10vh] md:h-[15vh] shadow-sm cursor-pointer px-6 sticky top-0 flex items-center'>
+        <img src={img} alt="profile" className='w-[50px] h-[50px] rounded-[50%] object-fit' onClick={()=>Toggle("profiles")} />
         <div className='flex ml-4 flex-col w-full relative'>
             <h1 className='text-[16px] font-semibold tracking-wide'>{name}</h1>
             <p className='text-[14px] tracking-wide text-gray-500'>{message}</p>
         </div>
-        {
-              show && type === "profiles" ?  <ModalWraper><Header /></ModalWraper> : null
-        }
+        <i className="ri-more-2-fill text-white text-xl block md:hidden" onClick={()=>Toggle("mobileSide")}></i>
      </div>
+     {
+        show && type === "profiles" ?  <ModalWraper><Header /></ModalWraper> : null
+      }
+    </div>
   )
 }
 

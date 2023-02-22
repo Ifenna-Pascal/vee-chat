@@ -3,7 +3,7 @@ import Message from './Message'
 
 function AllMessages() {
   return (
-    <div className='px-6 py-4 overflow-y-scroll grid justify-items-stretch  max-h-[77vh] scroll-smooth'>
+    <div className='px-6 py-4 overflow-y-scroll grid justify-items-stretch max-h-[82vh] md:max-h-[77vh] scroll-smooth'>
         <Message isSender message="Hi, Whats'up!!!" />
         <Message isSender={false} message="Hey!! I am fine" />
         <Message isSender={false} message="Have you eaten?" />                  

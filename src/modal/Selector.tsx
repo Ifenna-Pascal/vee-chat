@@ -1,13 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
 import { useTheme } from 'next-themes'
-import { log } from "console";
 
+// type ObjectProps = {
+//     string: ReactNode;
+// }
 
 const Selector = ({numbering}: {numbering: string}) => {
+    const object:any = {
+        "1" : <General />,
+        "2": <Notification />,
+        "3": <Help />,
+        "4": <Profile />,
+        "5": <Overview />,
+        "6": <Media />,
+        "7": <SimilarGroups />
+    }
     return (
-        numbering === "1" ? <General /> : numbering === "2" ? <Notification /> : numbering === "3" ? <Help /> : <Profile />
+        object[numbering]
     )
 }
+
+
 
 const General = () => {
     const [mounted, setMounted] = useState(false);
@@ -79,6 +92,31 @@ const Profile = () => {
                 <span className="text-[15px]">Phone Number</span>
                 <p className="text-sm text-gray-500 dark:text-gray-400">+234-959-333-432</p>
             </div>
+        </div>
+    )
+}
+
+// Header components
+const Overview = () => {
+   return (
+    <div className="flex flex-col">
+        <h1 className="header">Overview</h1>   
+    </div>
+   )
+}
+
+const Media = () => {
+   return (
+    <div className="flex flex-col">
+        <h1 className="header">Media</h1>
+    </div>
+   )
+}
+
+const SimilarGroups = () => {
+    return (
+        <div className="flex flex-col">
+            <h1 className="header">Groups in commons (0)</h1>
         </div>
     )
 }

@@ -35,7 +35,7 @@ function ModalWraper({children}: Props) {
 
     }, [modal])
   return (
-    <div className={`container w-full`}  ref={modalRef as React.RefObject<HTMLDivElement> } onClick={closedModal}>
+    <div className={`container`}  ref={modalRef as React.RefObject<HTMLDivElement> } onClick={closedModal}>
         <main className='modal'>{children}</main>
     </div>
   )

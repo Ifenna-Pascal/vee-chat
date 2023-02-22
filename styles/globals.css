@@ -25,13 +25,14 @@
     height: 100vh;
     display: flex;
     align-items: center;
+    /* justify-content: center; */
     z-index: 100;
     background: rgba(0, 0, 0, 0.2);
   }
 
   /* header modal animation */
   .modalH {
-    z-index: 1;
+    z-index: 10;
     display: flex;
     position: relative;
     animation: animated 0.7s;

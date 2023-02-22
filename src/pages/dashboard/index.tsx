@@ -5,7 +5,7 @@ import React from "react"
 
 const Dashboard = () => {
     return (
-        <div className="h-[84.5vh] flex flex-col items-stretch">
+        <div className="md:h-[84.5vh] w-full h-[94.5vh] flex flex-col items-stretch">
           <AllMessages />
           <Messaging/>
         </div>

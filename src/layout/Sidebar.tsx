@@ -12,9 +12,10 @@ function Sidebar() {
   const Toggle = (type: string) => {
     dispatch(toggle(type));
   }
+  const isMobile = show && type === "mobileSide"
   return (
-   <div className='w-[365px] fixed h-screen flex'>
-     <div className='w-[65px] flex flex-col pt-[50px] pb-[20px] h-full px-3 items-center bg-light-primary1 dark:bg-dark-primary2'>
+   <div className={`md:w-[365px] w-full fixed h-screen ${isMobile ? "flex w-full z-10" : "hidden"} md:flex`}>
+     <div className={`w-[65px] md:flex flex-col pt-[50px] pb-[20px] h-full px-3 border-r border-gray-300 items-center bg-light-primary1 dark:bg-dark-primary2`}>
        <div className='relative flex flex-col h-full items-center'>
        <div className='flex items-center flex-col justify-self-start'>
             <Icons onClick={()=>{}} icon='ri-chat-1-line' href='/dashboard' />
