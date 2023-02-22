@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../hooks/reducerHook';
-import { closeModal, toggle, openModal } from '../reducers/modalreducer';
+import { closeModal } from '../reducers/modalreducer';
 
 type Props = {
     children?: React.ReactNode

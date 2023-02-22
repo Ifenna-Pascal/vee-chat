@@ -9,7 +9,7 @@ type Props = {
 
 function Chat({img, name, message, time}: Props) {
   return (
-     <div className='mt-3 w-full py-3 cursor-pointer dark:hover:bg-dark-primary1 rounded-md hover:bg-dark-primary1 hover:bg-light-primary1 px-4 flex relative items-center'>
+     <div className='mt-3 w-full py-3 cursor-pointer dark:hover:bg-dark-primary1 rounded-md hover:bg-dark-primary1 hover:bg-light-primary1 px-2 md:px-4 flex relative items-center'>
         <img src={img} alt="profile" className='w-[50px] h-[50px] rounded-[50%] object-fit' />
         <div className='flex ml-4 flex-col  relative'>
             <h1 className='text-[16px] font-semibold tracking-wide'>{name}</h1>

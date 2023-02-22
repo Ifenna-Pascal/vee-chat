@@ -2,15 +2,21 @@ import React from 'react'
 import Chat from '../components/Chats'
 // import Icons from '../components/Icons'
 import SearchField from '../components/SearchField'
+import { useAppDispatch, useAppSelector } from '../hooks/reducerHook';
+import { closeModal } from '../reducers/modalreducer';
 
 function Selectbar() {
+  const dispatch = useAppDispatch()
+  const handleClose = () => {
+    dispatch(closeModal())
+  }
   return (
     <div className='lg:bg-white lg:dark:bg-dark-secondary flex flex-col px-2 lg:px-4 pt-6 w-full md:w-[300px] bg-light-primary1 dark:bg-dark-primary2 shadow-lg'>
       <div className='flex justify-between items-center'>
       <h1 className='font-semibold text-xl tracking-wide'>Chats</h1>
       <div>
       <i className='ri-edit-box-line px-4 py-2 cursor-pointer dark:bg-dark-primary2 hover:bg-light-primary1 rounded-md'></i>
-      <i className="ri-close-line px-4 py-2 md:hidden  cursor-pointer hover:bg-light-primary1 dark:bg-dark-primary2 rounded-md"></i>
+      <i className="ri-close-line px-4 py-2 md:hidden  cursor-pointer hover:bg-light-primary1 dark:hover:bg-dark-primary2 rounded-md" onClick={handleClose}></i>
       </div>
     </div>
     <SearchField />
